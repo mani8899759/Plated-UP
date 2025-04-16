@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 70% 97%;
+    --foreground: 20 14.3% 4.1%;
+
+    --card: 36 70% 97%;
+    --card-foreground: 20 14.3% 4.1%;
+
+    --popover: 36 70% 97%;
+    --popover-foreground: 20 14.3% 4.1%;
+
+    --primary: 15 81% 53%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 42 87% 55%;
+    --secondary-foreground: 24 9.8% 10%;
+
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+
+    --accent: 349 89% 40%;
+    --accent-foreground: 60 9.1% 97.8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 15 81% 53%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+
+    --primary: 15 81% 53%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 42 87% 55%;
+    --secondary-foreground: 24 9.8% 10%;
+
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+
+    --accent: 349 89% 40%;
+    --accent-foreground: 60 9.1% 97.8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 15 81% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.spice-meter {
+  @apply flex items-center gap-1;
+}
+
+.spice-meter-item {
+  @apply w-4 h-4 text-gray-300 transition-colors;
+}
+
+.spice-meter-item.active {
+  @apply text-red-500;
+}
+
+.mood-filter {
+  @apply flex flex-col items-center justify-center p-3 rounded-lg transition-all hover:scale-105;
+}
+
+.mood-filter.active {
+  @apply bg-primary/10 border-primary;
+}
+
+.mood-filter-icon {
+  @apply text-2xl mb-1;
+}
+
+.mood-filter-label {
+  @apply text-xs font-medium;
+}
+
+.dish-card {
+  @apply relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg;
+}
+
+.dish-card:hover {
+  @apply transform -translate-y-1;
+}
+
+.dish-card-image {
+  @apply aspect-square object-cover w-full;
+}
+
+.dish-card-content {
+  @apply absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white;
+}
+
+.restaurant-card {
+  @apply relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg;
+}
+
+.restaurant-card:hover {
+  @apply transform -translate-y-1;
+}
+
+.restaurant-card-image {
+  @apply aspect-video object-cover w-full;
+}
+
+.restaurant-card-content {
+  @apply p-4;
+}
+
+.taste-tag {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary/20 text-secondary-foreground mr-2 mb-2;
+}
+
+.review-card {
+  @apply bg-white rounded-xl p-4 shadow-sm mb-4;
+}
+
+.review-header {
+  @apply flex items-center mb-2;
+}
+
+.review-avatar {
+  @apply w-10 h-10 rounded-full mr-3;
+}
+
+.review-author {
+  @apply font-medium;
+}
+
+.review-date {
+  @apply text-xs text-gray-500;
+}
+
+.review-rating {
+  @apply flex items-center mt-1;
+}
+
+.review-content {
+  @apply mt-2;
+}
+
+.review-images {
+  @apply grid grid-cols-3 gap-2 mt-3;
+}
+
+.review-image {
+  @apply rounded-lg object-cover w-full h-24 transition-all duration-300;
+}
+
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+  @apply bg-primary text-primary-foreground;
+}
+
+.badge-secondary {
+  @apply bg-secondary text-secondary-foreground;
+}
+
+.badge-accent {
+  @apply bg-accent text-accent-foreground;
+}
+
+.hero-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary;
+}
+
+.ask-ai-button {
+  @apply fixed bottom-6 right-6 bg-accent text-white rounded-full p-4 shadow-lg z-50 transition-all hover:scale-110;
+}
+
+.ask-ai-button-icon {
+  @apply w-6 h-6;
+}
+
+.ask-ai-modal {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+}
+
+.ask-ai-modal-content {
+  @apply bg-white rounded-xl p-6 max-w-md w-full mx-4;
+}
+
+.ask-ai-modal-header {
+  @apply text-xl font-bold mb-4;
+}
+
+.ask-ai-modal-body {
+  @apply mb-4;
+}
+
+.ask-ai-modal-footer {
+  @apply flex justify-end;
+}
+
+/* Image hover effects */
+.image-hover-zoom {
+  @apply transition-transform duration-300 ease-in-out;
+}
+
+.image-hover-zoom:hover {
+  @apply scale-110;
+}
+
+.image-hover-lift {
+  @apply transition-transform duration-300 ease-in-out;
+}
+
+.image-hover-lift:hover {
+  @apply -translate-y-2;
+}
+
+.image-hover-glow {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.image-hover-glow:hover {
+  @apply brightness-110 shadow-lg;
+}
